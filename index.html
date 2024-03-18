@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        #preloader
+        {
+            background:#1d1f39 url(images/loader.gif) no-repeat center center;
+            background-size: 30%;
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            z-index:150;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +34,7 @@
     <link rel="stylesheet" href="css/style-switcher.css">
 </head>
 <body>
+    <div id="preloader"></div>
     <!-- ====  Main Container Start ==== -->
     <div class="main-container"></div>
     <!--  ===== Aside  Start ===== -->
@@ -422,5 +434,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/script.js"></script>
     <script src="js/style-switcher.js"></script>
+    <script>
+        var loader = document.getElementById("preloader");
+    
+    var dismissLoadingScreen = function() {
+        loader.style.display = "none";
+    };
+        
+    var wait3seconds = function() {
+        var result = setTimeout(dismissLoadingScreen, 3000);
+    };
+    
+    window.addEventListener("load", wait3seconds);
+    </script>
 </body>
 </html>
