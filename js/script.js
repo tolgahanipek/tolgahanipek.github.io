@@ -1,7 +1,7 @@
 var typed=new Typed(".typing",{
     strings:["","Software Engineer","Android Developer"],
-    typedSpeed:40,
-    Backspeed:20,
+    typeSpeed:40,
+    backSpeed:40,
     loop:true
 })
 const nav = document.querySelector(".nav"),
@@ -87,3 +87,4 @@ function asideSectionTogglerBtn()
         allSection[i].classList.toggle("open");
     }
 }
+

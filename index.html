@@ -2,6 +2,65 @@
 <html lang="en">
 <head>
     <style>
+
+    #tilt-box-wrap{
+    width: 380px;
+    height: 380px;
+    position:relative;
+    transition: all 0.6s ease-out;
+    perspective: 1000px;
+     }
+
+     #tilt-box-wrap:hover
+     {
+        transition: all 0.3s linear;
+        transform: scale(1.1);
+     }
+     #tilt-box
+     {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      align-items:center;
+      text-transform:uppercase;
+      justify-content: space-around;
+      transition: all 0.6s ease-out;
+      transform: rotateX(0deg) rotateY(0deg);
+      transform-style: preserve-3d;
+     }
+    #tilt-box strong
+    {
+    transform:translateZ(40px);
+    }
+    #t_over
+    {
+        width: 33.333%;
+        height: 33.333%;
+        position: absolute;
+        z-index: 1;
+    }
+    #t_over:nth-child(1){left:0;top: 0;}
+    #t_over:nth-child(2){left:33.333%;top: 0;}
+    #t_over:nth-child(3){left:66.666%;top: 0;}
+    #t_over:nth-child(4){left:0;top: 33.333%;}
+    #t_over:nth-child(5){left:33.333%;top: 33.333%;}
+    #t_over:nth-child(6){left:66.666%;top: 33.333%;}
+    #t_over:nth-child(7){left:0;top: 66.666%;}
+    #t_over:nth-child(8){left:33.333%;top: 66.666%;}
+    #t_over:nth-child(9){left:66.666%;top: 66.666%;}
+
+    #t_over:nth-child(1):hover ~  #tilt-box{transform: rotateX(-10deg) rotateY(10deg)}
+    #t_over:nth-child(2):hover ~  #tilt-box{transform: rotateX(-10deg) rotateY(0deg)}
+    #t_over:nth-child(3):hover ~  #tilt-box{transform: rotateX(-10deg) rotateY(-10deg)}
+    #t_over:nth-child(4):hover ~  #tilt-box{transform: rotateX(0deg) rotateY(10deg)}
+    #t_over:nth-child(5):hover ~  #tilt-box{transform: rotateX(0deg) rotateY(0deg)}
+    #t_over:nth-child(6):hover ~  #tilt-box{transform: rotateX(0deg) rotateY(-10deg)}
+    #t_over:nth-child(7):hover ~  #tilt-box{transform: rotateX(10deg) rotateY(10deg)}
+    #t_over:nth-child(8):hover ~  #tilt-box{transform: rotateX(10deg) rotateY(0deg)}
+    #t_over:nth-child(9):hover ~  #tilt-box{transform: rotateX(10deg) rotateY(-10deg)}
+    </style>
+    <style>
         #preloader
         {
             background:#1d1f39 url(images/loader.gif) no-repeat center center;
@@ -19,6 +78,7 @@
     <title>Tolgahan İPEK</title>
     <!-- == CSS files ===== -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/cursor.css">
     <link rel="stylesheet" href="css/skins/color-1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- ===== Style Switcher ====== -->
@@ -65,10 +125,25 @@
                         Hello, My name is <span class="name">Tolgahan İpek</span> </h3>
                         <h3 class="my-profession">I am a  <span class="typing"></span></h3>
                         <p>I was born in Ankara in 1997. I graduated from Kırıkkale University, Department of Computer Engineering. I am extremely interested in technology and science. More...</p>
-                        <a href="CV/TOLGAHAN İPEK-CV-ENG.pdf" class="btn">Download CV </a>
+                        <a href="CV/TOLGAHAN İPEK-CV-ENG.pdf" class="btn">Download CV <i class="fa fa-download" style="width:10px; height:20px;"></i></a>
                 </div>
-                <div class="home-img padd-15">
-                    <img src="images/Photo.jpg" alt="">
+                <div>
+                    <div id="container12">
+                        <div id="tilt-box-wrap">
+                            <span id="t_over"></span>
+                            <span id="t_over"></span>
+                            <span id="t_over"></span>
+                            <span id="t_over"></span>
+                            <span id="t_over"></span>
+                            <span id="t_over"></span>
+                            <span id="t_over"></span>
+                            <span id="t_over"></span>
+                            <span id="t_over"></span>
+                            <div id="tilt-box">
+                                <strong><img style="width:380px;height:380px;border-radius:50px;" src="images/Photo.jpg"></strong>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
            </div>
@@ -124,6 +199,7 @@
                             <div class="skills padd-15">
                                 <div class="row">
                                     <div class="skill-item padd-15">
+                                        <h5 style="text-align: center;">SKILLS:</h5>
                                         <h5>C#</h5>
                                         <div class="progress">
                                             <div class="progress-in" style="width:76%"></div>
@@ -401,7 +477,7 @@
                         </div>
                         <div class="row">
                             <div class="form-item col-12 padd-15">
-                                <button type="submit" class="btn">Send Message</button>
+                                <button type="submit" style="cursor: pointer;"  class="btn"><a style="color:white;" href="mailto:tolgaipek879@gmail.com">Send Message &nbsp;<i class="fa fa-envelope"></i></a></button>
                             </div>
                         </div>
                     </div>
@@ -448,5 +524,13 @@
     
     window.addEventListener("load", wait3seconds);
     </script>
+   <div id="cursor"></div>
+   <script>
+    let cursor=document.querySelector('#cursor');
+    document.onmousemove=function(e){
+        cursor.style.top=e.pageY +'px';
+        cursor.style.left=e.pageX + 'px';
+    }
+   </script>
 </body>
 </html>
