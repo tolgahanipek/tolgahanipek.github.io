@@ -668,6 +668,12 @@ max-width: 100%;
     color:var(--skin-color);
     filter:var(--filter);
 }
+.contact .contact-info-item .icon .fa:hover
+{
+    font-size: 25px;
+    color:var(--skin-color);
+    transform: scale(1.5);
+}
 .contact .contact-info-item h4
 {
     font-size: 18px;
