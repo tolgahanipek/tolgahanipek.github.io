@@ -61,6 +61,13 @@
     #t_over:nth-child(9):hover ~  #tilt-box{transform: rotateX(10deg) rotateY(-10deg)}
     </style>
     <style>
+     #shd:hover
+     {
+        filter:drop-shadow(0 0 5px #0f0) drop-shadow(0 0 15px #0f0)
+         drop-shadow(0 0 35px #0f0) hue-rotate(100deg);
+     }
+    </style>
+    <style>
         #preloader
         {
             background:#1d1f39 url(images/loader.gif) no-repeat center center;
@@ -108,10 +115,10 @@
         <span></span>
        </div>
        <ul class="nav">
-        <li> <a href="#home" class="active"><i class="fa fa-home"></i> Home</a></li>
-        <li> <a href="#about"><i class="fa fa-user"></i> About</a></li>
-        <li> <a href="#portfolio"><i class="fa fa-briefcase"></i>Portfolio</a></li>
-        <li> <a href="#contact"><i class="fa fa-comments"></i>Contact</a></li>
+        <li> <a href="#home" class="active" id="shd"><i class="fa fa-home"></i> Home</a></li>
+        <li> <a href="#about" id="shd"><i class="fa fa-user"></i> About</a></li>
+        <li> <a href="#portfolio" id="shd"><i class="fa fa-briefcase"></i>Portfolio</a></li>
+        <li> <a href="#contact" id="shd"><i class="fa fa-comments"></i>Contact</a></li>
        </ul>
     </div>
     <!--  ===== Aside  End ===== -->
@@ -536,10 +543,10 @@
         </div>
         <h4>Theme Colors</h4>
         <div class="colors">
-            <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+            <span class="color-1" onclick="setActiveStyle('color-4')"></span>
             <span class="color-2" onclick="setActiveStyle('color-2')"></span>
             <span class="color-3" onclick="setActiveStyle('color-3')"></span>
-            <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+            <span class="color-4" onclick="setActiveStyle('color-1')"></span>
             <span class="color-5" onclick="setActiveStyle('color-5')"></span>
         </div>
     </div>
